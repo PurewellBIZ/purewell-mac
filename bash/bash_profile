@@ -1,0 +1,24 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+paths=(
+    /usr/local/opt/coreutils/libexec/gnubin
+    /usr/local/opt/findutils/libexec/gnubin
+    /usr/local/opt/diffutils/bin
+    /usr/local/opt/ed/libexec/gnubin
+    /usr/local/opt/gnu-indent/libexec/gnubin
+    /usr/local/opt/gnu-tar/libexec/gnubin
+    /usr/local/opt/gnu-sed/libexec/gnubin
+    /usr/local/opt/gnu-which/libexec/gnubin
+    /usr/local/opt/gpatch/bin
+    /usr/local/opt/grep/libexec/gnubin
+    /usr/local/opt/make/libexec/gnubin
+)
+
+for path in "${paths[@]}"; do
+    PATH="${path}:${PATH}"
+done
+export PATH
+
+export EDITOR=$(which vim)
+export PS1="\[\033[1;32m\]\u@\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]# "
+
