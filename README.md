@@ -80,9 +80,27 @@ brew install --cask temurin
 ```shell
 brew install lima docker
 
-limactl start --name=docker template://docker
+# LIMA SETUP BEGIN
+
+limactl start docker template://docker
+
+limactl stop docker -f
+
+# 홈디렉토리(Host)에 대해 쓰기 권한 줌
+# mounts:
+# - location: "~"
+#   writable: true
+vi ~/.lima/docker/lima.yaml
+
+limactl start docker
+
+# LIMA SETUP END
 
 docker context create lima-docker --docker "host=unix://${HOME}/.lima/docker/sock/docker.sock"
 
 docker context use lima-docker
 ```
+
+SSH Key를 바꾸면, LIMA가 QEMU를 통해 띄우는 Ubuntu Linux 컨테이너와 통신이 되지 않는다.
+
+만약 `~/.ssh/id_XXX` 를 새로 생성하거나 수정했다면, `~/.lima/docker` 디렉토리를 삭제하고, `LIMA SETUP BEGIN` 부터 `LIMA SETUP END` 까지 다시 실행한다.
