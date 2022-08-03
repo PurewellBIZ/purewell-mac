@@ -191,7 +191,7 @@
                         ]
                     },
                     {
-                        "description": "오른쪽 Alt를 한/영키로 배당",
+                        "description": "언어: 오른쪽 Alt/Control을 한글/한자로 배당",
                         "manipulators": [
                             {
                                 "from": {
@@ -206,12 +206,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "오른쪽 Control을 한자키로 배당",
-                        "manipulators": [
+                            },
                             {
                                 "from": {
                                     "key_code": "right_control"
@@ -225,12 +220,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "'Window+점'을 이모지 입력으로 배당",
-                        "manipulators": [
+                            },
                             {
                                 "from": {
                                     "key_code": "period",
@@ -1935,13 +1925,36 @@
                         ]
                     },
                     {
-                        "description": "Return => Cmd+o (Open) (Only in Finder)",
+                        "description": "Finder",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.finder"
+                                            "^com\\.apple\\.finder$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f6"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "g",
+                                        "modifiers": [
+                                            "shift",
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1963,17 +1976,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "F2 => Return (Rename) (Only in Finder)",
-                        "manipulators": [
+                            },
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.finder"
+                                            "^com\\.apple\\.finder$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1987,17 +1995,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Delete => Cmd+backspace (Delete) (Only in Finder)",
-                        "manipulators": [
+                            },
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.finder"
+                                            "^com\\.apple\\.finder$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -2019,17 +2022,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Backspace => Cmd+up (Go back) (Only in Finder)",
-                        "manipulators": [
+                            },
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.finder"
+                                            "^com\\.apple\\.finder$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
