@@ -90,6 +90,8 @@ limactl stop docker -f
 # mounts:
 # - location: "~"
 #   writable: true
+# 메모리 기본 사용량이 4GBi인데, 이것 가지고는 컴파일이 되지 않는 것이 많으므로, 8GBi로 설정이 필요함
+# memory: 8GBi
 vi ~/.lima/docker/lima.yaml
 
 limactl start docker
